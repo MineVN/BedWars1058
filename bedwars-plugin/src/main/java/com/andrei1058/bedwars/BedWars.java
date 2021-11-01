@@ -168,12 +168,12 @@ public class BedWars extends JavaPlugin {
         this.getLogger().info("Loading support for paper/spigot: " + version);
 
         // Setup languages
-        new English();
-        new Romanian();
-        new Italian();
-        new Polish();
-        new Spanish();
-        new Russian();
+//        new English();
+//        new Romanian();
+//        new Italian();
+//        new Polish();
+//        new Spanish();
+//        new Russian();
 
         config = new MainConfig(this, "config");
 

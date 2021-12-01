@@ -39,7 +39,13 @@ jobs:
 #          body_path: CHANGELOG.md
 #        env:
 #          GITHUB_TOKEN: ${{ github.token }}
-        - uses: actions/upload-artifact@v2
-          with:
-            name: Artifact
-            path: ./bedwars-plugin/target/bedwars-plugin-*.jar
+     - name: upload plugin jar artifact
+        uses: actions/upload-release-asset@v1
+#        env:
+#          GITHUB_TOKEN: ${{ github.token }}
+        with:
+#          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./bedwars-plugin/target/bedwars-plugin-*.jar
+          asset_name: bedwars-plugin.jar
+          asset_content_type: application/jar
+          prerelease: false

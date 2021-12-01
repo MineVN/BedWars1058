@@ -39,7 +39,7 @@ jobs:
 #          body_path: CHANGELOG.md
 #        env:
 #          GITHUB_TOKEN: ${{ github.token }}
-      - name: upload plugin jar artifact
-        uses: actions/upload-artifact@v2
-          name: Artifact
-          path: ./bedwars-plugin/target/bedwars-plugin-*.jar
+        - uses: actions/upload-artifact@v2
+          with:
+            name: Artifact
+            path: ./bedwars-plugin/target/bedwars-plugin-*.jar

@@ -40,12 +40,12 @@ jobs:
 #        env:
 #          GITHUB_TOKEN: ${{ github.token }}
       - name: upload plugin jar artifact
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-artifact@v2
 #        env:
 #          GITHUB_TOKEN: ${{ github.token }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./bedwars-plugin/target/bedwars-plugin-*.jar
-          asset_name: bedwars-plugin.jar
-          asset_content_type: application/jar
-          prerelease: false
+#          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          path: ./bedwars-plugin/target/bedwars-plugin-*.jar
+          name: bedwars-plugin.jar
+#          asset_content_type: application/jar
+#          prerelease: false

@@ -20,11 +20,8 @@
 
 package com.andrei1058.bedwars.listeners.joinhandler;
 
-import com.andrei1058.bedwars.BedWars;
 import com.andrei1058.bedwars.arena.Arena;
-import com.andrei1058.bedwars.arena.ReJoin;
 import com.andrei1058.bedwars.sidebar.BedWarsScoreboard;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -32,7 +29,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import static com.andrei1058.bedwars.BedWars.mainCmd;
-import static com.andrei1058.bedwars.BedWars.plugin;
 
 public class JoinListenerMultiArena implements Listener {
 
@@ -51,32 +47,32 @@ public class JoinListenerMultiArena implements Listener {
             }
         }
 
-        ReJoin reJoin = ReJoin.getPlayer(p);
+//        ReJoin reJoin = ReJoin.getPlayer(p);
 
-        Bukkit.getScheduler().runTaskLater(plugin, () -> {
-            // Hide new player to players and spectators, and vice versa
-            // Players from lobby will remain visible
-            for (Player online : Bukkit.getOnlinePlayers()){
-                if (Arena.isInArena(online)) {
-                    BedWars.nms.spigotHidePlayer(online, p);
-                    BedWars.nms.spigotHidePlayer(p, online);
-                } else {
-                    BedWars.nms.spigotShowPlayer(online, p);
-                    BedWars.nms.spigotShowPlayer(p, online);
-                }
-            }
+//        Bukkit.getScheduler().runTaskLater(plugin, () -> {
+//            // Hide new player to players and spectators, and vice versa
+//            // Players from lobby will remain visible
+//            for (Player online : Bukkit.getOnlinePlayers()){
+//                if (Arena.isInArena(online)) {
+//                    BedWars.nms.spigotHidePlayer(online, p);
+//                    BedWars.nms.spigotHidePlayer(p, online);
+//                } else {
+//                    BedWars.nms.spigotShowPlayer(online, p);
+//                    BedWars.nms.spigotShowPlayer(p, online);
+//                }
+//            }
+//
+//            // To prevent invisibility issues handle ReJoin after sending invisibility packets
+//            if (reJoin != null) {
+//                if (reJoin.canReJoin()) {
+//                    reJoin.reJoin(p);
+//                    return;
+//                }
+//                reJoin.destroy(false);
+//            }
+//        }, 14L);
 
-            // To prevent invisibility issues handle ReJoin after sending invisibility packets
-            if (reJoin != null) {
-                if (reJoin.canReJoin()) {
-                    reJoin.reJoin(p);
-                    return;
-                }
-                reJoin.destroy(false);
-            }
-        }, 14L);
-
-        if (reJoin != null && reJoin.canReJoin()) return;
+//        if (reJoin != null && reJoin.canReJoin()) return;
 
         // Teleport to lobby location
 //        Location lobbyLocation = config.getConfigLoc("lobbyLoc");

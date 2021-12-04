@@ -35,7 +35,6 @@ import net.minecraft.server.v1_12_R1.Item;
 import net.minecraft.server.v1_12_R1.*;
 import org.bukkit.Color;
 import org.bukkit.Location;
-import org.bukkit.Particle;
 import org.bukkit.block.Bed;
 import org.bukkit.block.BlockState;
 import org.bukkit.command.Command;
@@ -666,11 +665,13 @@ public class v1_12_R1 extends VersionSupport {
     @Override
     public void spigotShowPlayer(Player victim, Player receiver) {
         receiver.showPlayer(getPlugin(), victim);
+        if (receiver.hasPermission("minevn.debug")) receiver.sendMessage("show " + victim.getName());
     }
 
     @Override
     public void spigotHidePlayer(Player victim, Player receiver) {
         receiver.hidePlayer(getPlugin(), victim);
+        if (receiver.hasPermission("minevn.debug")) receiver.sendMessage("hide " + victim.getName());
     }
 
     @Override

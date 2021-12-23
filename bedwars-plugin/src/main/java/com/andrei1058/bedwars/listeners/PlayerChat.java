@@ -41,6 +41,8 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import static com.andrei1058.bedwars.BedWars.*;
 import static com.andrei1058.bedwars.api.language.Language.getMsg;
 
+import java.util.List;
+
 public class PlayerChat implements Listener {
 
     @EventHandler
@@ -88,6 +90,7 @@ public class PlayerChat implements Listener {
                     return;
                 }
                 ITeam t = a.getTeam(p);
+                List<Player> aliveMembers = t.getMembers();
                 String msg = e.getMessage();
                 if (msg.startsWith("!") || msg.startsWith("shout") || msg.startsWith("SHOUT") || msg.startsWith(getMsg(p, Messages.MEANING_SHOUT))) {
                     if (!(p.hasPermission(Permissions.PERMISSION_SHOUT_COMMAND) || p.hasPermission(Permissions.PERMISSION_ALL))) {
@@ -120,7 +123,7 @@ public class PlayerChat implements Listener {
                             .replace("{playername}", p.getName()).replace("{player}", p.getDisplayName()).replace("{team}", t.getColor().chat() + "[" + t.getDisplayName(Language.getPlayerLanguage(e.getPlayer())).toUpperCase() + "]")
                             .replace("{level}", getLevelSupport().getLevel(p))).replace("{message}", "%2$s"));
                 } else {
-                    if (a.getMaxInTeam() == 1) {
+                    if (aliveMembers.size() == 1) {
                         if (!config.getBoolean("globalChat")) {
                             e.getRecipients().clear();
                             e.getRecipients().addAll(a.getPlayers());

@@ -227,7 +227,7 @@ public class BuyItem implements IBuyItem {
                 if (permanent) nms.setUnbreakable(im);
 
                 if (i.getType() == Material.BOW) {
-                    if (permanent) nms.setUnbreakable(im);
+                    nms.setUnbreakable(im);
                     for (TeamEnchant e : arena.getTeam(player).getBowsEnchantments()) {
                         im.addEnchant(e.getEnchantment(), e.getAmplifier(), true);
                     }

@@ -71,7 +71,7 @@ import com.andrei1058.bedwars.support.papi.SupportPAPI;
 import com.andrei1058.bedwars.support.party.NoParty;
 import com.andrei1058.bedwars.support.party.PAF;
 import com.andrei1058.bedwars.support.party.PAFBungeecordRedisApi;
-import com.andrei1058.bedwars.support.party.Parties;
+import com.andrei1058.bedwars.support.party.PartiesAdapter;
 import com.andrei1058.bedwars.support.preloadedparty.PrePartyListener;
 import com.andrei1058.bedwars.support.vault.*;
 import com.andrei1058.bedwars.support.vipfeatures.VipFeatures;
@@ -175,6 +175,7 @@ public class BedWars extends JavaPlugin {
         this.getLogger().info("Loading support for paper/spigot: " + version);
 
         // Setup languages
+<<<<<<< HEAD
 //        new English();
 //        new Romanian();
 //        new Italian();
@@ -182,6 +183,18 @@ public class BedWars extends JavaPlugin {
 //        new Spanish();
 //        new Russian();
 
+=======
+        new English();
+        new Romanian();
+        new Italian();
+        new Polish();
+        new Spanish();
+        new Russian();
+        new Bangla();
+        new Persian();
+        new Hindi();
+        new Portuguese();
+>>>>>>> origin/master
 
         config = new MainConfig(this, "config");
 
@@ -291,7 +304,7 @@ public class BedWars extends JavaPlugin {
             }, 1L);
 
         // Register events
-        registerEvents(new QuitAndTeleportListener(), new BreakPlace(), new DamageDeathMove(), new Inventory(), new Interact(), new RefreshGUI(), new HungerWeatherSpawn(), new CmdProcess(),
+        registerEvents(new EnderPearlLanded(), new QuitAndTeleportListener(), new BreakPlace(), new DamageDeathMove(), new Inventory(), new Interact(), new RefreshGUI(), new HungerWeatherSpawn(), new CmdProcess(),
                 new FireballListener(), new EggBridge(), new SpectatorListeners(), new BaseListener(), new TargetListener(), new LangListener(), new Warnings(this), new ChatAFK());
         if (getServerType() == ServerType.BUNGEE) {
             if (autoscale) {
@@ -347,7 +360,7 @@ public class BedWars extends JavaPlugin {
 
                 if (getServer().getPluginManager().isPluginEnabled("Parties")) {
                     getLogger().info("Hook into Parties (by AlessioDP) support!");
-                    party = new Parties();
+                    party = new PartiesAdapter();
                 } else if (Bukkit.getServer().getPluginManager().isPluginEnabled("PartyAndFriends")) {
                     getLogger().info("Hook into Party and Friends for Spigot (by Simonsator) support!");
                     party = new PAF();
@@ -448,7 +461,7 @@ public class BedWars extends JavaPlugin {
                        chat = new WithChat();
                    } else {
                        plugin.getLogger().info("Vault found, but no chat provider!");
-                       economy = new NoEconomy();
+                       chat = new NoChat();
                    }
                 } catch (Exception var2_2) {
                     chat = new NoChat();
@@ -600,8 +613,8 @@ public class BedWars extends JavaPlugin {
         for (IArena a : Arena.getArenas()) {
             try {
                 a.disable();
-            } catch (Exception ignored) {
-                ignored.printStackTrace();
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
         }
 

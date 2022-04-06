@@ -232,6 +232,7 @@ public class BuyItem implements IBuyItem {
                         im.addEnchant(e.getEnchantment(), e.getAmplifier(), true);
                     }
                 } else if (nms.isSword(i) || nms.isAxe(i)) {
+                    nms.setUnbreakable(im);
                     for (TeamEnchant e : arena.getTeam(player).getSwordsEnchantments()) {
                         im.addEnchant(e.getEnchantment(), e.getAmplifier(), true);
                     }

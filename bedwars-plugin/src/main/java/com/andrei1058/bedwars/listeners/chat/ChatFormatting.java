@@ -90,6 +90,7 @@ public class ChatFormatting implements Listener {
 
             ITeam team = a.getTeam(p);
             String msg = e.getMessage();
+            List<Player> aliveTeammates = team.getMembers();
 
             // shout format
             if (isShouting(msg, language)) {
@@ -118,7 +119,7 @@ public class ChatFormatting implements Listener {
             }
 
             // player team chat
-            if (a.getMaxInTeam() == 1) {
+            if (aliveTeammates.size() == 1) {
                 setRecipients(e, a.getPlayers(), a.getSpectators());
             } else {
                 setRecipients(e, team.getMembers());

@@ -229,9 +229,9 @@ public class Vietnamese extends Language {
         yml.addDefault(Messages.PLAYER_DIE_EXPLOSION_WITH_SOURCE_FINAL_KILL, "{PlayerColor}{PlayerName} &bị hạ bởi một quả bom tình yêu t {KillerColor}{KillerName}&7. &b&lKẾT LIỄU!");
         yml.addDefault(Messages.PLAYER_DIE_EXPLOSION_WITHOUT_SOURCE_REGULAR, "{PlayerColor}{PlayerName} &7đã bị hạ bởi một quả bom. Đau đấy.");
         yml.addDefault(Messages.PLAYER_DIE_EXPLOSION_WITHOUT_SOURCE_FINAL_KILL, "{PlayerColor}{PlayerName} &7đã bị hạ bởi một quả bom. &b&lKẾT LIỄU!");
-        yml.addDefault(Messages.PLAYER_DIE_PVP_REGULAR_KILL, "{PlayerColor}{PlayerName} &7was killed by {KillerColor}{KillerName}&7.");
-        yml.addDefault(Messages.PLAYER_DIE_PVP_FINAL_KILL, "{PlayerColor}{PlayerName} &7was killed by {KillerColor}{KillerName}&7. &b&lKẾT LIỄU!");
-        yml.addDefault(Messages.PLAYER_DIE_UNKNOWN_REASON_REGULAR, "{PlayerColor}{PlayerName} &7died.");
+        yml.addDefault(Messages.PLAYER_DIE_PVP_REGULAR_KILL, "{PlayerColor}{PlayerName} &7đã bị hạ bởi {KillerColor}{KillerName}&7.");
+        yml.addDefault(Messages.PLAYER_DIE_PVP_FINAL_KILL, "{PlayerColor}{PlayerName} &7đã bị hạ bởi {KillerColor}{KillerName}&7. &b&lKẾT LIỄU!");
+        yml.addDefault(Messages.PLAYER_DIE_UNKNOWN_REASON_REGULAR, "{PlayerColor}{PlayerName} &7đã hẻo.");
         yml.addDefault(Messages.PLAYER_DIE_UNKNOWN_REASON_FINAL_KILL, "{PlayerColor}{PlayerName} &7died. &b&lKẾT LIỄU!");
         yml.addDefault(Messages.PLAYER_DIE_SHOOT_REGULAR, "{PlayerColor}{PlayerName} &7đã bị bắn hạ bởi {KillerColor}{KillerName}&7!");
         yml.addDefault(Messages.PLAYER_DIE_SHOOT_FINAL_KILL, "{PlayerColor}{PlayerName} &7đã bị bắn hạ bởi {KillerColor}{KillerName}&7! &b&lKẾT LIỄU!");

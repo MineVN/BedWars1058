@@ -68,7 +68,7 @@ public class HalloweenSpecial {
 
     protected static boolean checkAvailabilityDate() {
         // check date
-        ZoneId zone = ZoneId.of("Europe/Rome");
+        ZoneId zone = ZoneId.of("Asia/Ho_Chi_Minh");
         Date date = new Date();
         LocalDate localDate = date.toInstant().atZone(zone).toLocalDate();
         int month = localDate.getMonthValue();

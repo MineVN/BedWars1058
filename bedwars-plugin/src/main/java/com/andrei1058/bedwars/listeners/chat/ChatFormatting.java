@@ -118,7 +118,7 @@ public class ChatFormatting implements Listener {
             }
 
             // player team chat
-            if (a.getMaxInTeam() == 1) {
+            if (a.getMaxInTeam() == 1 || a.getTeam(p).getSize() == 1) {
                 setRecipients(e, a.getPlayers(), a.getSpectators());
             } else {
                 setRecipients(e, team.getMembers());

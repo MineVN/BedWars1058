@@ -219,7 +219,8 @@ public class Vietnamese extends Language {
         yml.addDefault(Messages.INTERACT_INVISIBILITY_REMOVED_DAMGE_TAKEN, "&cBạn không còn tàng hình nữa vì bạn đã bị tấn công!");
         yml.addDefault(Messages.PLAYER_DIE_VOID_FALL_REGULAR_KILL, "{PlayerColor}{PlayerName} &7đã rơi xuống vực.");
         yml.addDefault(Messages.PLAYER_DIE_VOID_FALL_FINAL_KILL, "{PlayerColor}{PlayerName} &7đã rơi xuống vực. &b&lKẾT LIỄU!");
-        yml.addDefault(Messages.PLAYER_DIE_KNOCKED_IN_VOID_REGULAR_KILL, "{PlayerColor}{PlayerName} &7đã bị đẩy xuống vực bởi {KillerColor}{KillerName}&7. &b&lKẾT LIỄU!");
+        yml.addDefault(Messages.PLAYER_DIE_KNOCKED_IN_VOID_REGULAR_KILL, "{PlayerColor}{PlayerName} &7đã bị đẩy xuống vực bởi {KillerColor}{KillerName}&7.");
+        yml.addDefault(Messages.PLAYER_DIE_KNOCKED_IN_VOID_FINAL_KILL, "{PlayerColor}{PlayerName} &7đã bị đẩy xuống vực bởi {KillerColor}{KillerName}&7. &b&lKẾT LIỄU!");
         yml.addDefault(Messages.PLAYER_DIE_PVP_LOG_OUT_REGULAR, "{PlayerColor}{PlayerName} &7đã bị ngắt kết nối trong khi đánh với {KillerColor}{KillerName}&7. Đen thật đấy.");
         yml.addDefault(Messages.PLAYER_DIE_PVP_LOG_OUT_FINAL, "{PlayerColor}{PlayerName} &7đã bị ngắt kết nối trong khi đánh với {KillerColor}{KillerName}&7. &b&lKẾT LIỄU!");
         yml.addDefault(Messages.PLAYER_DIE_KNOCKED_BY_REGULAR_KILL, "{PlayerColor}{PlayerName} &7đã bị đẩy đến chết bởi {KillerColor}{KillerName}&7.");
